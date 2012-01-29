@@ -16,18 +16,19 @@ import javax.swing.JFrame;
  *
  * copyright Macky Broido 2012
  *
- * v1.4
+ * v1.5
  *
  * first attempted commit from house using git :D
- * 
- * git officially works and is approximately 10461552685427% better then subversion :D
- * 
+ *
+ * git officially works and is approximately 10461552685427% better then
+ * subversion :D
+ *
  * .
  **************
  */
-public class Main implements ActionListener
-{
+public class Main implements ActionListener {
     //feilds
+
     private int turn;
     private int counter;
     private int firstCardMnumonic;
@@ -48,8 +49,7 @@ public class Main implements ActionListener
     private JButton[] buttonArray;
     private ImageIcon coverIcon;
 
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) {
         new Main().getGoing();//makes getGoing
     }
 
@@ -57,13 +57,11 @@ public class Main implements ActionListener
     {
         random = new Random();//makes it real
         list52 = new ArrayList<Integer>();
-        for (int i = 0; i < 52; i++)
-        {
+        for (int i = 0; i < 52; i++) {
             list52.add(i);
         }
         list20 = new ArrayList<Integer>();
-        for (int i = 0; i < 10; i++)
-        {
+        for (int i = 0; i < 10; i++) {
             randoNumber52 = (int) (Math.random() * list52.size());
             list20.add(list52.get(randoNumber52));
             list20.add(list52.get(randoNumber52));
@@ -71,15 +69,14 @@ public class Main implements ActionListener
         }
         //knuth shuffle method
         randomList = new ArrayList<Integer>(20);
-        for (int i = 0; i < 20; i++)
-        {
+        for (int i = 0; i < 20; i++) {
             r = random.nextInt(list20.size());
             randomList.add(list20.get(r));
             list20.remove(r);
         }
         buttonArray = new JButton[20];
         coverIcon = new ImageIcon("/Users/macky/NetBeansProjects/CS15/src/cs15/CardCover_2.jpg");
-        window = new JFrame("Card Game                                                                                     v1.4");//window
+        window = new JFrame("Card Game                                                                                     v1.5");//window
         window.setSize(512, 512);//makes window 512x512
         window.setLocationRelativeTo(null);// location of window on screen
         window.setBackground(Color.lightGray);// background color of window is black
@@ -102,17 +99,14 @@ public class Main implements ActionListener
     {
         counter += 1;
         turn = counter % 2;
-        if (turn == 1)
-        {
+        if (turn == 1) {
             firstCardMnumonic = tempButton.getMnemonic();
         }
-        if (turn == 0)
-        {
+        if (turn == 0) {
             secondCardMnumonic = tempButton.getMnemonic();
-        if (firstCardMnumonic == secondCardMnumonic)
-        {
-            System.out.println("match");
-        }
+            if (firstCardMnumonic == secondCardMnumonic) {
+                System.out.println("match");
+            }
         }
         tempButton = (JButton) euc.getSource();
         randoNumber = (int) (Math.random() * 51);
