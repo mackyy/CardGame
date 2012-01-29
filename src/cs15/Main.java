@@ -16,7 +16,7 @@ import javax.swing.JFrame;
  *
  * copyright Macky Broido 2012
  *
- * v1.6
+ * v1.7
  *
  * renamed to CardShark
  * .
@@ -72,7 +72,7 @@ public class Main implements ActionListener {
         }
         buttonArray = new JButton[20];
         coverIcon = new ImageIcon("/Users/macky/NetBeansProjects/CS15/src/cs15/CardCover_2.jpg");
-        window = new JFrame("Card Game                                                                                     v1.6");//window
+        window = new JFrame("Card Game                                                                                     v1.7");//window
         window.setSize(512, 512);//makes window 512x512
         window.setLocationRelativeTo(null);// location of window on screen
         window.setBackground(Color.lightGray);// background color of window is black
